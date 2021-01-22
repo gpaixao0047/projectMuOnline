@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	<title>Olá jsf</title>
+		<h:outputStylesheet library="css" name="style.css" />
+		<h:outputStylesheet library="css" name="override.css" />
+		<!--  
+	   <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css"/>
+          -->
+</h:head>
+
+<h:body>
+
+<p:dataTable id="tabela" var="membInfo" value="#{membInfoListView.listMembInfoBean}">
+		<p:column headerText="Guild" id="teste"  style="width:200px;">
+			<h:outputText value="#{membInfo.membGuild}" />
+		</p:column>
+		<p:column headerText="MembId" id="teste2">
+			<h:outputText value="#{membInfo.membId}" />
+		</p:column>
+		<p:column headerText="Senha" id="teste3">
+			<h:outputText value="#{membInfo.membPwd}" />
+		</p:column>
+	</p:dataTable>
+
+</h:body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Olá jsf</title>
+	<style type="text/css">
+body {
+	background-image: url("/resources/img/bg.jpg");
+}
+#menularetal{
+	margin: 1em auto;
+}
+a {
+	font-size: 12px;
+	color: #CCCCCC;
+	text-decoration: none;
+	font-family: "Tahoma";
+}
+
+
+a:hover {
+	color: #FFF;
+	text-decoration: none;
+	border-bottom: 1px dashed #FFF;
+}
+
+body, th, tr {
+	font-size: 15px;
+	color: #333;
+	font-family: "Tahoma"
+}
+
+input {
+	font-size: 12px;
+	color: #666;
+	font-family: "Tahoma";
+	border: 1px solid #999;
+}
+
+.submit {
+	font-size: 12px;
+	color: #666;
+	font-family: "Tahoma";
+	border: 1px solid #999;
+	background-color: #333333;
+}
+
+.style1 {
+	color: #990000;
+	font-weight: bold;
+}
+
+.style8 {
+	font-family: Verdana, Tahoma, Arial, "Trebuchet MS", Sans-Serif, Georgia,
+		Courier, "Times New Roman", Serif;
+	font-size: 11px;
+}
+</style>
+
+</h:head>
+
+<h:body>
+
+<table width="750" height="553" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" style="border:2px solid #FFF">
+	<tr>
+		 <td height="547">
+		 <table width="750" border="0" cellspacing="0" cellpadding="0">
+		 <tr>
+        <td height="185" background="http://brmu.net/BANNER-MG-1752.gif">
+		<img border="0" src="/resources/img/Banner.jpg" width="750" height="185"/></td>
+      </tr>
+		 </table>
+		 <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="48" background="/resources/img/links.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="10%"><div align="center"><a href="ir.php?pagina=home" target="iframe">Home</a></div></td>
+              <td width="10%"><div align="center"><a href="ir.php?pagina=cadastro" target="iframe">Cadastro</a></div></td>
+              <td width="11%"><div align="center"><a href="ir.php?pagina=downloads" target="iframe">Downloads</a></div></td>
+              <td width="13%"><div align="center"><a href="ir.php?pagina=informacoes" target="iframe">Informas</a></div></td>
+              <td width="9%"><div align="center"><a href="ir.php?pagina=rank" target="iframe">Ranking</a> </div></td>
+			  <td width="13%"><div align="center"><font color="#CCCCCC">Shop</font></div></td>
+              <td width="9%"><div align="center"><a href="ir.php?pagina=guilds" target="iframe">Guilds</a></div></td>
+              <td width="11%"><div align="center"><a href="ir.php?pagina=servip" target="iframe">Conta vip </a></div></td>
+              <td width="14%"><div align="center"><font color="#CCCCCC">
+				<a href="http://www.orkut.com/Community.aspx?cmm=43337982">Orkut</a></font></div></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+       <table width="750" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+       <td width="165" height="258" background="/resources/img/menu.jpg" valign="top">
+       <table width="144" border="0" align="center" cellpadding="0" cellspacing="0">
+       <tr>
+       <td></td>
+       </tr>
+       <tr>
+            <td><b>USURIOS</b></td>
+            </tr>
+			<tr>
+            <td></td>
+            </tr>
+            <form name="frmpainel" method="post" onSubmit="CamposLogin();" action="" id="frmpainel">
+            <tr>
+            <td width="144">Login: <br/>
+                <input name="login" type="text" id="login" maxlength="10"/></td>
+            </tr>
+            <tr>
+            <td>Senha: <br/>
+              <input name="senha" type="password" id="senha" maxlength="10"/></td>
+            </tr>
+             <tr>
+            <td></td>
+            </tr>
+            <tr>
+            <td><input name="prossegue_login" type="submit" class="submit" id="prossegue_login" value="LOGAR"/></td>
+            </tr>
+            </form>
+       </table>
+     
+      <table width="144" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+              <td></td>
+            </tr>
+         <tr>
+              <td><b>Mu Java </b></td>
+            </tr>           
+            <tr>
+              <td width="200">Total de contas: <strong><p:outputLabel value="#{membInfoListView.totalDeContas}"/> </strong></td>
+            </tr>
+           
+            <tr>
+              <td>Total de chars: <strong><p:outputLabel value="#{membInfoListView.totalPersonagens}"/> </strong></td>
+             <br/>
+            </tr>
+                 
+            <tr>
+            <td>Status: Ativo</td>
+            </tr>
+            <tr>
+              <td>Jogando: <span class="style1">15</span><em><a href="ir.php?pagina=online" target="iframe"><font size="1" color="#666666">players</font> </a></em></td>
+            </tr>
+            <tr>
+            <td>Record: 15</td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+      </table>
+    
+       <table width="144" border="0" align="center" cellpadding="0" cellspacing="0">
+       <tr>
+              <td width="144"></td>
+            </tr>
+         <tr>
+         <hr/>
+              <td><strong>TOP 5 PLAYERS </strong></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>   
+       </table>
+       <p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p><b><font size="1" color="#000000"></font> </b> </p>
+       </td>
+        <td width="585"><div align="center">
+          <iframe frameborder="0" src="home.xhtml" name="iframe" width="580" height="380"></iframe>
+        </div></td>
+       </tr>
+       </table>
+       <table width="750" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="56" background="http://img165.imageshack.us/img165/3408/rodazi2.jpg">
+		<img border="0" src="/resources/img/roda.JPG" width="750" height="53"/></td>
+      </tr>
+    </table>
+		 </td>
+		 
+	</tr>
+</table>
+
+
+</h:body>
+</html>
