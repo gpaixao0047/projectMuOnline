@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	
+	<changeSet id="0" author="guilherme.paixao">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="Noticias" />
+			</not>
+		</preConditions>
+		<createTable tableName="Noticias">
+			<column name="id_noticias" type="int" remarks="idnoticias"> <constraints nullable="false" />
+			</column>
+			<column name="conta" type="varchar(50)" remarks="conta"> <constraints nullable="false" />
+			</column>
+			<column name="personagem" type="varchar(50)" remarks="personagem"> <constraints nullable="false" />
+			</column>
+				<column name="data" type="datetime" remarks="data"> <constraints nullable="false" />
+			</column>
+			<column name="noticia" type="varchar(100)" remarks="noticia"> <constraints nullable="false" />
+			</column>
+			<column name="comentario" type="varchar(100)" remarks="comentario"> <constraints nullable="true" />
+			</column>
+
+		</createTable>
+		<rollback>
+			<dropTable tableName="Noticias" />
+		</rollback>
+	</changeSet>
+
+	<changeSet id="1" author="guilherme.paixao">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<primaryKeyExists primaryKeyName="PK_NOTICIAS" />
+			</not>
+		</preConditions>
+		<addPrimaryKey tableName="NOTICIAS"
+			columnNames="id_noticias" constraintName="PK_NOTICIAS" />
+		<rollback>
+			<dropTable tableName="NOTICIAS" />
+		</rollback>
+	</changeSet>
+
+	<changeSet id="2" author="guilherme.paixao">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<sequenceExists sequenceName="SEQ_NOTICIAS" />
+			</not>
+		</preConditions>
+		<createSequence sequenceName="SEQ_NOTICIAS"
+			cycle="false" />
+		<rollback>
+			<dropSequence sequenceName="SEQ_NOTICIAS" />
+		</rollback>
+	</changeSet>
+	
+
+</databaseChangeLog>
